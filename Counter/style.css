@@ -1,0 +1,83 @@
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Counter Display */
+#counter{
+    font-size: 7rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 40px;
+    text-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+/* Button Container */
+#btncontainer{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Buttons */
+.btns{
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Individual Button Colors */
+#IncreamentBtn{
+    background: #28a745;
+}
+
+#ResetBtn{
+    background: #ffc107;
+    color: black;
+}
+
+#DecrementBtn{
+    background: #dc3545;
+}
+
+/* Hover Effects */
+.btns:hover{
+    transform: translateY(-4px) scale(1.05);
+    opacity: 0.9;
+}
+
+/* Click Effect */
+.btns:active{
+    transform: scale(0.95);
+}
+
+/* Responsive */
+@media(max-width: 500px){
+    #counter{
+        font-size: 5rem;
+    }
+
+    .btns{
+        width: 200px;
+    }
+}
