@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Image Scroller</title>
+    <!-- Simple Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Simple Image Scroller</h1>
+        <p>A beginner-friendly carousel using HTML, CSS, and basic JavaScript.</p>
+    </header>
+
+    <main class="carousel-container">
+        <!-- The Slider Area -->
+        <div class="slider-wrapper">
+            <div class="slider-track" id="sliderTrack">
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80" alt="Majestic Valley">
+                    <div class="slide-caption">
+                        <h3>Majestic Valley</h3>
+                        <p>A beautiful green valley surrounded by towering mountains and a calm river.</p>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80" alt="Sunset Beach">
+                    <div class="slide-caption">
+                        <h3>Sunset Beach</h3>
+                        <p>Golden sun setting over calm ocean waves crashing on a sandy shore.</p>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&auto=format&fit=crop&q=80" alt="Mystic Forest">
+                    <div class="slide-caption">
+                        <h3>Mystic Forest</h3>
+                        <p>Beautiful sun rays filtering through high trees in a quiet, green forest.</p>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&auto=format&fit=crop&q=80" alt="City Lights">
+                    <div class="slide-caption">
+                        <h3>City Lights</h3>
+                        <p>A modern city skyline sparkling with bright colorful lights at night.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="nav-btn prev-btn" id="prevBtn" aria-label="Previous Slide">&#10094;</button>
+        <button class="nav-btn next-btn" id="nextBtn" aria-label="Next Slide">&#10095;</button>
+
+        <!-- Indicator Dots -->
+        <div class="dots-container" id="dotsContainer">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+        </div>
+    </main>
+
+    <!-- Autoplay Control Button -->
+    <div class="controls-panel">
+        <button class="autoplay-btn" id="autoplayBtn">Pause Autoplay</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
