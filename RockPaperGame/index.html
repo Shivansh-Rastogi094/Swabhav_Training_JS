@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock, Paper, Scissors Game</title>
+  <!-- Clean basic font -->
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="game-wrapper">
+    <header class="header">
+      <h1>Rock, Paper, Scissors</h1>
+      <p>Play against the computer. First to select wins the round!</p>
+    </header>
+
+    <main class="game-card">
+      <!-- Scoreboard Section -->
+      <section class="scoreboard">
+        <div class="score-box">
+          <span class="score-label">Player</span>
+          <div class="score-number" id="playerScore">0</div>
+        </div>
+        <div class="score-box">
+          <span class="score-label">Ties</span>
+          <div class="score-number" id="tieScore">0</div>
+        </div>
+        <div class="score-box">
+          <span class="score-label">Computer</span>
+          <div class="score-number" id="computerScore">0</div>
+        </div>
+      </section>
+
+      <!-- Arena Section showing selections -->
+      <section class="arena">
+        <div class="choice-display">
+          <div class="emoji-placeholder" id="playerChoiceDisplay">❓</div>
+          <span class="display-label">Player's Play</span>
+        </div>
+        
+        <div class="vs-text">VS</div>
+        
+        <div class="choice-display">
+          <div class="emoji-placeholder" id="computerChoiceDisplay">❓</div>
+          <span class="display-label">Computer's Play</span>
+        </div>
+      </section>
+
+      <!-- Result Announcement Banner -->
+      <div class="result-banner" id="resultBanner">
+        <h2 id="resultMessage">Make your choice to begin!</h2>
+      </div>
+
+      <!-- Action Choice Buttons -->
+      <section class="choices-container">
+        <h3>Choose Your Move:</h3>
+        <div class="choices-grid">
+          <button class="choice-btn" id="rockBtn">
+            <span class="btn-emoji">✊</span>
+            <span class="btn-text">Rock</span>
+          </button>
+          
+          <button class="choice-btn" id="paperBtn">
+            <span class="btn-emoji">✋</span>
+            <span class="btn-text">Paper</span>
+          </button>
+          
+          <button class="choice-btn" id="scissorsBtn">
+            <span class="btn-emoji">✌️</span>
+            <span class="btn-text">Scissors</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Match History Log & General Controls -->
+      <section class="log-section">
+        <div class="log-header">
+          <h3>Match History Log</h3>
+          <button class="reset-btn" id="resetBtn">Reset Scores</button>
+        </div>
+        <div class="log-box">
+          <p class="empty-log" id="emptyLog">No rounds played yet.</p>
+          <ul class="log-list hidden" id="logList"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

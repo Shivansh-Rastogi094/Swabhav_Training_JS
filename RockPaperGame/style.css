@@ -1,0 +1,354 @@
+/* Variables & Theme Styles */
+:root {
+  --primary: #4f46e5;          /* Modern indigo accent */
+  --primary-hover: #4338ca;
+  --bg-color: #f3f4f6;         /* Light gray background */
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --card-bg: #ffffff;
+  
+  --win-color: #10b981;        /* Green for victory */
+  --loss-color: #ef4444;       /* Red for defeat */
+  --tie-color: #f59e0b;        /* Amber for tie */
+  
+  --radius-md: 10px;
+  --radius-sm: 6px;
+  --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.5;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.game-wrapper {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Header style */
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Main Card */
+.game-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Scoreboard */
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.score-box {
+  flex: 1;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  text-align: center;
+}
+
+.score-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.score-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* Battle Arena showing player vs computer */
+.arena {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f9fafb;
+  border: 1px dashed #e5e7eb;
+  border-radius: var(--radius-sm);
+  padding: 20px;
+}
+
+.choice-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.emoji-placeholder {
+  font-size: 3rem;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 50%;
+}
+
+.display-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.vs-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* Results message banner */
+.result-banner {
+  text-align: center;
+  padding: 12px;
+  background-color: #f9fafb;
+  border-radius: var(--radius-sm);
+  border: 1px solid #e5e7eb;
+}
+
+.result-banner h2 {
+  font-size: 1.25rem;
+  color: var(--text-main);
+}
+
+.win-text { color: var(--win-color); }
+.loss-text { color: var(--loss-color); }
+.tie-text { color: var(--tie-color); }
+
+/* Choices Container & Grid */
+.choices-container h3 {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.choices-grid {
+  display: flex;
+  gap: 16px;
+}
+
+.choice-btn {
+  flex: 1;
+  background-color: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.choice-btn:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  background-color: #faf5ff;
+}
+
+.choice-btn:active {
+  transform: translateY(0);
+}
+
+.btn-emoji {
+  font-size: 2.2rem;
+}
+
+.btn-text {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+/* Log & Reset Section */
+.log-section {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.log-header h3 {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.reset-btn {
+  background-color: transparent;
+  color: #ef4444;
+  border: 1px solid #fca5a5;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+  background-color: #fee2e2;
+  border-color: #ef4444;
+}
+
+.log-box {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  min-height: 100px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.empty-log {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  font-style: italic;
+  margin-top: 25px;
+}
+
+.log-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.log-item {
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+}
+
+.log-result {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.log-win { color: var(--win-color); }
+.log-loss { color: var(--loss-color); }
+.log-tie { color: var(--tie-color); }
+
+/* Explanation Section */
+.explanation-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+.explanation-card h2 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.explanation-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.explanation-card ul {
+  padding-left: 20px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.explanation-card li {
+  margin-bottom: 6px;
+}
+
+.explanation-card code {
+  background-color: #f1f5f9;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #0f172a;
+}
+
+/* Footer style */
+.footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  padding: 10px 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Responsive adjust */
+@media (max-width: 480px) {
+  .choices-grid {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .arena {
+    padding: 12px 6px;
+  }
+  .emoji-placeholder {
+    width: 60px;
+    height: 60px;
+    font-size: 2.2rem;
+  }
+}
